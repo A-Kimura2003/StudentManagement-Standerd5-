@@ -40,6 +40,8 @@ public class StudentManagementApplication {
 //		return name + ":" + age;
 //		return student;
 //	}
+
+	//データ呼び出し、表示
 	@GetMapping("/studentInfo")
 	public String getStudentInfo(){
 		if(selectedStudentName.isEmpty()){
@@ -68,6 +70,7 @@ public class StudentManagementApplication {
 		}
 	}
 
+//データ追加
 	@PostMapping("/addStudent")
 	public String addStudent(@RequestParam String name, @RequestParam String age){
 		student.put(name, age);
@@ -85,6 +88,7 @@ public class StudentManagementApplication {
 //		return student.values().stream().findFirst().orElse("No age available");
 //	}
 
+//全データ表示
 	@GetMapping("/allStudents")
 	public Map<String,String> getAllStudents(){
 		return student;
